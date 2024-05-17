@@ -1,0 +1,25 @@
+volumes:
+  certs:
+  data:
+
+services:
+  teleport-server:
+    image: public.ecr.aws/gravitational/teleport-distroless:15.3.1
+    ports:
+      - "3023:3023"
+      - "3024:3024"
+      - "3025:3025"
+      - "3080:3080"
+    volumes:
+      - ./teleport.yaml:/etc/teleport/teleport.yaml
+      - data:/var/lib/teleport
+      - certs:/mnt/shared/certs
+    healthcheck:
+      test: tctl status
+      interval: 2s
+      timeout: 2s
+      retries: 3
+      start_period: 5s
+
+    env_file:
+      - .env
