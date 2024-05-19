@@ -6,10 +6,7 @@ services:
   teleport-server:
     image: public.ecr.aws/gravitational/teleport-distroless:15.3.1
     ports:
-      - "3023:3023"
-      - "3024:3024"
-      - "3025:3025"
-      - "3080:3080"
+      - "443:443"
     volumes:
       - ./teleport.yaml:/etc/teleport/teleport.yaml
       - data:/var/lib/teleport
