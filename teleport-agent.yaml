@@ -1,0 +1,31 @@
+version: v3
+teleport:
+  nodename: appsanay
+  data_dir: /var/lib/teleport
+  join_params:
+    token_name: f86608761981a5b784987a67d697b59d
+    method: token
+  proxy_server: pam.lotusib.ir:443
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+  ca_pin: sha256:946c2395f3ceed861232cec302bd04bc78dca670dd75844918a4b9c7a555f6bf
+  diag_addr: ""
+auth_service:
+  enabled: "no"
+ssh_service:
+  enabled: "yes"
+  labels:
+    teleport.internal/resource-id: 3d86cadc-5549-49eb-95f9-9c3a7b5391bb
+  commands:
+  - name: hostname
+    command: [hostname]
+    period: 1m0s
+proxy_service:
+  public_addr: 192.168.9.99
+  enabled: "no"
+  https_keypairs: []
+  https_keypairs_reload_interval: 0s
+  acme: {}
