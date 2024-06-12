@@ -1,0 +1,2 @@
+SSL_CERT_FILE=/mnt/shared/certs/cert.pem
+SSL_CERT_DIR=/mnt/shared/certs
