@@ -1,0 +1,29 @@
+#
+# A Sample Teleport configuration file.
+#
+# Things to update:
+#  1. license.pem: Retrieve a license from your Teleport account https://teleport.sh
+#     if you are an Enterprise customer.
+#
+version: v3
+teleport:
+  nodename: pam.lotusib.ir
+  data_dir: /var/lib/teleport
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+auth_service:
+  enabled: "yes"
+  proxy_listener_mode: multiplex
+ssh_service:
+  enabled: "yes"
+proxy_service:
+  enabled: "yes"
+  public_addr: pam.lotusib.ir:443
+  web_listen_addr: 0.0.0.0:443
+  https_keypairs:
+  - key_file: /mnt/shared/certs/key.pem
+    cert_file: /mnt/shared/certs/fullchain.pem
+
