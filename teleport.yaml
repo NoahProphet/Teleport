@@ -7,7 +7,7 @@
 #
 version: v3
 teleport:
-  nodename: pam.lotusib.ir
+  nodename: www.example.com
   data_dir: /var/lib/teleport
   log:
     output: stderr
@@ -21,7 +21,7 @@ ssh_service:
   enabled: "yes"
 proxy_service:
   enabled: "yes"
-  public_addr: pam.lotusib.ir:443
+  public_addr: www.example.com:443
   web_listen_addr: 0.0.0.0:443
   https_keypairs:
   - key_file: /mnt/shared/certs/key.pem

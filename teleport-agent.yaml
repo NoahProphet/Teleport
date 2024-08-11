@@ -1,11 +1,11 @@
 version: v3
 teleport:
-  nodename: appsanay
+  nodename: example
   data_dir: /var/lib/teleport
   join_params:
-    token_name: f86608761981a5b784987a67d697b59d
+    token_name: "Token ID"
     method: token
-  proxy_server: pam.lotusib.ir:443
+  proxy_server: www.example.com:443
   log:
     output: stderr
     severity: INFO
@@ -23,9 +23,9 @@ ssh_service:
   - name: hostname
     command: [hostname]
     period: 1m0s
-proxy_service:
-  public_addr: 192.168.9.99
-  enabled: "no"
-  https_keypairs: []
-  https_keypairs_reload_interval: 0s
-  acme: {}
+#proxy_service:
+#  public_addr: 192.168.9.99
+#  enabled: "no"
+#  https_keypairs: []
+#  https_keypairs_reload_interval: 0s
+#  acme: {}
